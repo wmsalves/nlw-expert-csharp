@@ -4,13 +4,14 @@ using RocketseatAuction.API.Repositories;
 
 namespace RocketseatAuction.API.UseCases.Auctions.GetCurrent;
 
-public class GetCurrentAuctionsUseCase
+public class GetCurrentAuctionUseCase
 {
     public Auction? Execute()
     {
-
         var repository = new RocketseatAuctionDbContext();
+
         var today = DateTime.Now;
+
         return repository
             .Auctions
             .Include(auction => auction.Items)
