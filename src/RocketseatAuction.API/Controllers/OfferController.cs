@@ -10,7 +10,6 @@ public class OfferController : ControllerBase
 {
     [HttpPost]
     [Route("{itemId}")]
-
     public IActionResult CreateOffer(
         [FromRoute] int itemId,
         [FromBody] RequestCreateOfferJson request,
